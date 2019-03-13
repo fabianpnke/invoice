@@ -9,7 +9,7 @@
  *
  */
 
-namespace Konekt\PdfInvoice;
+namespace Fabianpnke\Invoice;
 
 use FPDF;
 
@@ -51,7 +51,7 @@ class InvoicePrinter extends FPDF
     public $display_tofrom = true;
     protected $columns;
 
-    public function __construct($size = 'A4', $currency = '$', $language = 'en')
+    public function __construct($size = 'A4', $currency = '€', $language = 'de')
     {
         $this->items              = [];
         $this->totals             = [];
@@ -235,8 +235,8 @@ class InvoicePrinter extends FPDF
         if ($vat !== false) {
             $p['vat'] = $vat;
             if (is_numeric($vat)) {
-                $p['vat'] = $this->currency . ' ' . number_format($vat, 2, $this->referenceformat[0],
-                        $this->referenceformat[1]);
+                $p['vat'] = number_format($vat, 2, $this->referenceformat[0],
+                        $this->referenceformat[1]) . ' ' . $this->currency;
             }
             $this->vatField = true;
             $this->recalculateColumns();
@@ -249,8 +249,8 @@ class InvoicePrinter extends FPDF
             $this->firstColumnWidth = 58;
             $p['discount']          = $discount;
             if (is_numeric($discount)) {
-                $p['discount'] = $this->currency . ' ' . number_format($discount, 2, $this->referenceformat[0],
-                        $this->referenceformat[1]);
+                $p['discount'] = number_format($discount, 2, $this->referenceformat[0],
+                        $this->referenceformat[1]) . ' ' . $this->currency;
             }
             $this->discountField = true;
             $this->recalculateColumns();
@@ -263,8 +263,8 @@ class InvoicePrinter extends FPDF
         $t['name']  = $name;
         $t['value'] = $value;
         if (is_numeric($value)) {
-            $t['value'] = $this->currency . ' ' . number_format($value, 2, $this->referenceformat[0],
-                    $this->referenceformat[1]);
+            $t['value'] = number_format($value, 2, $this->referenceformat[0],
+                    $this->referenceformat[1]) . ' ' . $this->currency;
         }
         $t['colored']   = $colored;
         $this->totals[] = $t;
