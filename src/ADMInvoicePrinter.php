@@ -13,7 +13,7 @@ namespace Fabianpnke\Invoice;
 
 use FPDF;
 
-class InvoicePrinter extends FPDF
+class ADMInvoicePrinter extends FPDF
 {
     const ICONV_CHARSET_INPUT = 'UTF-8';
     const ICONV_CHARSET_OUTPUT_A = 'ISO-8859-1//TRANSLIT';
