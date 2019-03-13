@@ -1,11 +1,11 @@
 <?php
-    $lang['number']   = 'Rechnungsnummer';
-    $lang['date']     = 'Rechnungsdatum';
-    $lang['time']     = 'Rechnungs-Uhrzeit';
+    $lang['number']   = 'Reservierungsnummer';
+    $lang['date']     = 'Reservierungsdatum';
+    $lang['time']     = 'Reservierungsuhrzeit';
     $lang['due']      = 'Fälligkeitsdatum';
-    $lang['to']       = 'Rechnungsempfänger';
-    $lang['from']     = 'Rechnung von';
-    $lang['product']  = 'Produkt';
+    $lang['to']       = 'Reservierungsempfänger';
+    $lang['from']     = 'Ausgabe durch';
+    $lang['product']  = 'Karte';
     $lang['qty']      = 'Menge';
     $lang['price']    = 'Preis';
     $lang['discount'] = 'Rabatt';
