@@ -1,16 +1,13 @@
 {
-    "name": "konekt/pdf-invoice",
-    "description": "Library to generate PDF invoices",
+    "name": "fabianpnke/invoice",
+    "description": "ADM Invoice Library",
     "type": "library",
     "license": "GPL-2.0-or-later",
-    "keywords": ["invoice", "pdf", "konekt", "artkonekt"],
-    "support": {
-        "source": "https://github.com/artkonekt/pdf-invoice"
-    },
+    "keywords": ["invoice", "pdf", "adm", "fabianpnke"],
     "authors": [
         {
-            "name": "Attila Fulop",
-            "homepage": "https://github.com/fulopattila122"
+            "name": "Fabian Pankoke",
+            "homepage": "https://github.com/fabianpnke"
         }
     ],
     "require": {
@@ -23,11 +20,11 @@
         "phpunit/phpunit": "~5.0"
     },
     "autoload": {
-        "psr-4": { "Konekt\\PdfInvoice\\": "src/" }
+        "psr-4": { "Fabianpnke\\Invoice\\": "src/" }
     },
     "autoload-dev": {
         "psr-4": {
-            "Konekt\\PdfInvoice\\Tests\\": "tests/"
+            "Fabianpnke\\Invoice\\Tests\\": "tests/"
         }
     },
     "extra": {
