@@ -1,7 +1,7 @@
 <?php
     $lang['number']   = 'Reservierungsnummer';
     $lang['date']     = 'Reservierungsdatum';
-    $lang['time']     = 'Reservierungsuhrzeit';
+    $lang['time']     = 'Bestätigungsdatum';
     $lang['due']      = 'Fälligkeitsdatum';
     $lang['to']       = 'Reservierungsempfänger';
     $lang['from']     = 'Ausgabe durch';
