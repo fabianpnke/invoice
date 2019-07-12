@@ -2,8 +2,8 @@
     $lang['number']   = 'Reservierungsnummer';
     $lang['date']     = 'Reservierungsdatum';
     $lang['time']     = 'Bestätigungsdatum';
-    $lang['due']      = 'Fälligkeitsdatum';
-    $lang['to']       = 'Reservierungsempfänger';
+    $lang['due']      = 'Zahlungsziel';
+    $lang['to']       = 'Empfänger';
     $lang['from']     = 'Ausgabe durch';
     $lang['product']  = 'Karte';
     $lang['qty']      = 'Menge';
