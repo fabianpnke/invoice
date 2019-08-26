@@ -53,6 +53,7 @@ class ADMInvoicePrinter extends FPDF
 
     public function __construct($size = 'A4', $currency = '€', $language = 'de')
     {
+        $this->SetCompression(true);
         $this->items              = [];
         $this->totals             = [];
         $this->addText            = [];
