@@ -40,6 +40,9 @@ class ADMInvoicePrinter extends FPDF
     public $date;
     public $time;
     public $due;
+    public $bezahlt;
+    public $versand;
+    public $storniert;
     public $from;
     public $to;
     public $items;
@@ -187,6 +190,21 @@ class ADMInvoicePrinter extends FPDF
     public function setDue($date)
     {
         $this->due = $date;
+    }
+    
+    public function setBezahlt($bezahlt)
+    {
+        $this->bezahlt = $bezahlt;
+    }
+    
+    public function setVersand($versand)
+    {
+        $this->versand = $versand;
+    }
+    
+    public function setStorniert($storniert)
+    {
+        $this->storniert = $storniert;
     }
 
     public function setLogo($logo = 0, $maxWidth = 0, $maxHeight = 0)
@@ -368,6 +386,36 @@ class ADMInvoicePrinter extends FPDF
             $this->SetTextColor(50, 50, 50);
             $this->SetFont($this->font, '', 9);
             $this->Cell(0, $lineheight, $this->due, 0, 1, 'R');
+        }
+        //Bezahlt
+        if (!empty($this->bezahlt)) {
+            $this->Cell($positionX, $lineheight);
+            $this->SetFont($this->font, 'B', 9);
+            $this->SetTextColor($this->color[0], $this->color[1], $this->color[2]);
+            $this->Cell(32, $lineheight, iconv(self::ICONV_CHARSET_INPUT, self::ICONV_CHARSET_OUTPUT_A, mb_strtoupper($this->lang['bezahlt'], self::ICONV_CHARSET_INPUT)) . ':', 0, 0, 'L');
+            $this->SetTextColor(50, 50, 50);
+            $this->SetFont($this->font, '', 9);
+            $this->Cell(0, $lineheight, $this->bezahlt, 0, 1, 'R');
+        }
+        //Versand
+        if (!empty($this->versand)) {
+            $this->Cell($positionX, $lineheight);
+            $this->SetFont($this->font, 'B', 9);
+            $this->SetTextColor($this->color[0], $this->color[1], $this->color[2]);
+            $this->Cell(32, $lineheight, iconv(self::ICONV_CHARSET_INPUT, self::ICONV_CHARSET_OUTPUT_A, mb_strtoupper($this->lang['versand'], self::ICONV_CHARSET_INPUT)) . ':', 0, 0, 'L');
+            $this->SetTextColor(50, 50, 50);
+            $this->SetFont($this->font, '', 9);
+            $this->Cell(0, $lineheight, $this->versand, 0, 1, 'R');
+        }
+        //Storniert
+        if (!empty($this->storniert)) {
+            $this->Cell($positionX, $lineheight);
+            $this->SetFont($this->font, 'B', 9);
+            $this->SetTextColor($this->color[0], $this->color[1], $this->color[2]);
+            $this->Cell(32, $lineheight, iconv(self::ICONV_CHARSET_INPUT, self::ICONV_CHARSET_OUTPUT_A, mb_strtoupper($this->lang['storniert'], self::ICONV_CHARSET_INPUT)) . ':', 0, 0, 'L');
+            $this->SetTextColor(50, 50, 50);
+            $this->SetFont($this->font, '', 9);
+            $this->Cell(0, $lineheight, $this->storniert, 0, 1, 'R');
         }
 
         //First page
